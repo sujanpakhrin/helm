@@ -1,0 +1,13 @@
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: assignment13-database
+spec:
+  type: ClusterIP
+  selector:
+    app: assignment13-database
+  ports:
+    - name: postgres
+      port: {{ .Values.database.service.port }}
+      targetPort: 5432

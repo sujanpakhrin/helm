@@ -1,0 +1,41 @@
+
+frontend:
+  replicaCount: 1
+  image:
+    repository: codeykenny/assignment13-frontend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    type: NodePort
+    port: 80
+    targetPort: 80
+    nodePort: 30090
+
+backend:
+  replicaCount: 1
+  image:
+    repository: codeykenny/assignment13-backend
+    tag: latest
+    pullPolicy: IfNotPresent
+  service:
+    port: 8000
+    targetPort: 8000
+
+database:
+  image:
+    repository: postgres
+    tag: "17"
+    pullPolicy: IfNotPresent
+  replicaCount: 1
+  service:
+    port: 5432
+  auth:
+    database: assignment13
+    username: assignment13
+    existingSecret: assignment13-db
+    createSecret: false
+    password: ""
+  persistence:
+    enabled: true
+    size: 1Gi
+    accessMode: ReadWriteOnce
