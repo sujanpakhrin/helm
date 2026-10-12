@@ -1,6 +1,6 @@
 
 frontend:
-  replicaCount: 1
+  replicaCount: 2
   image:
     repository: codeykenny/assignment13-frontend
     tag: "9cccf7409e06f552eaec6b390acff73fecaed566"
