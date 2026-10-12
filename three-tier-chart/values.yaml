@@ -3,7 +3,7 @@ frontend:
   replicaCount: 2
   image:
     repository: codeykenny/assignment13-frontend
-    tag: "9cccf7409e06f552eaec6b390acff73fecaed566"
+    tag: "2da1432c5a9d382b8a497c08d02ee42c63159eba"
     pullPolicy: IfNotPresent
   service:
     type: NodePort
@@ -15,7 +15,7 @@ backend:
   replicaCount: 1
   image:
     repository: codeykenny/assignment13-backend
-    tag: "9cccf7409e06f552eaec6b390acff73fecaed566"
+    tag: "2da1432c5a9d382b8a497c08d02ee42c63159eba"
     pullPolicy: IfNotPresent
   service:
     port: 8000
